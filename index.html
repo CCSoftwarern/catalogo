@@ -48,7 +48,73 @@
             </div>
         </div>
     </nav>
-    <!-- Banner -->
+
+
+    <!-- Carrocel -->
+    <header class="mx-auto mt-4" style="width: 95%;">
+        <div class="shadow-none p-5 mb-5 bg-body-tertiary rounded">
+          <p class="fs-2 fw-bold">Bem vindo a SF Store</p>
+          <p class="fw-medium">Somos uma loja especializada em produtos de informática da mais alta qualidade, sempre
+            oferecendo o melhor custo benefício.</p>
+          <button type="button" class="btn btn-dark">Ver mais produtos</button>
+        </div>
+        <div>
+          <p class="text-center fs-2 fw-bold">Produtos em destaque</p>
+        </div>
+      </header>
+
+    <!-- Cards -->
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto" style="width: 95%;">
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://media.cuponeria.com.br/1/2022/10/307041bd-estilos-de-roupas.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5  class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text text-decoration-line-through text-body-secondary">De R$ 225,14 por</p>
+              <p id="p1" class="card-text fs-4 fw-bold text-primary">Por R$ 139,89</p>
+              <button type="button" onclick="abrirWhatsApp(document.getElementById('p1').value)" class="btn btn-warning">Comprar</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://cdn.shopify.com/s/files/1/0076/0994/2086/files/pexels-harsh-kushwaha-1839704_480x480.jpg?v=1627672010" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a short card.</p>
+              <p class="card-text text-decoration-line-through text-body-secondary">De R$ 225,14 por</p>
+        <p class="card-text fs-4 fw-bold text-primary">Por R$ 139,89</p>
+        <button type="button" class="btn btn-warning">Comprar</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://respostas.sebrae.com.br/wp-content/uploads/2015/01/8-dicas-para-o-sucesso-de-lojas-de-roupas-femininas-959x615.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text text-decoration-line-through text-body-secondary">De R$ 225,14 por</p>
+        <p class="card-text fs-4 fw-bold text-primary">Por R$ 139,89</p>
+        <button type="button" class="btn btn-warning">Comprar</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://media.cuponeria.com.br/1/2022/10/307041bd-estilos-de-roupas.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text text-decoration-line-through text-body-secondary">De R$ 225,14 por</p>
+              <p class="card-text fs-4 fw-bold text-primary">Por R$ 139,89</p>
+              <button type="button" class="btn btn-warning">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
@@ -64,6 +130,16 @@
             <a href="" class="text-white">LinkedIn</a>
         </div>
     </footer>
+
+
+    <script>
+        function abrirWhatsApp(msm) {
+          var numero = '5584987432387'; // Substitua pelo número do destinatário com o código do país
+          var mensagem = encodeURIComponent(msm);
+          var url = 'https://wa.me/' + numero + '?text=' + mensagem;
+          window.open(url, '_blank');
+        }
+      </script>
 
 </body>
 
