@@ -54,8 +54,7 @@
     <header class="mx-auto mt-4" style="width: 95%;">
         <div class="shadow-none p-5 mb-5 bg-body-tertiary rounded">
           <p class="fs-2 fw-bold">Bem vindo a SF Store</p>
-          <p class="fw-medium">Somos uma loja especializada em produtos de informática da mais alta qualidade, sempre
-            oferecendo o melhor custo benefício.</p>
+          <p class="fw-medium">Onde estilo e elegância encontram conforto e qualidade</p>
           <button type="button" class="btn btn-dark">Ver mais produtos</button>
         </div>
         <div>
@@ -70,11 +69,11 @@
           <div class="card h-100">
             <img src="https://media.cuponeria.com.br/1/2022/10/307041bd-estilos-de-roupas.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5  class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text text-decoration-line-through text-body-secondary">De R$ 225,14 por</p>
-              <p id="p1" class="card-text fs-4 fw-bold text-primary">Por R$ 139,89</p>
-              <button type="button" onclick="abrirWhatsApp(document.getElementById('p1').value)" class="btn btn-warning">Comprar</button>
+              <h5 id="NomeP1" class="card-title">Conjunto em Alfaiataria</h5>
+              <p class="card-text">conjunto em Alfaiataria veste até 42</p>
+              <p class="card-text text-decoration-line-through text-body-secondary">De R$ 190,00 por</p>
+              <p  class="card-text fs-4 fw-bold text-primary">Por R$ 149,00</p>
+              <button type="button" onclick="abrirWhatsApp(document.getElementById('NomeP1').innerText)" class="btn btn-warning">Comprar</button>
             </div>
           </div>
         </div>
@@ -135,7 +134,7 @@
     <script>
         function abrirWhatsApp(msm) {
           var numero = '5584987432387'; // Substitua pelo número do destinatário com o código do país
-          var mensagem = encodeURIComponent(msm);
+          var mensagem = encodeURIComponent('Olá, tenho interesse nesse produto: '+msm);
           var url = 'https://wa.me/' + numero + '?text=' + mensagem;
           window.open(url, '_blank');
         }
