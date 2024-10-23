@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cardContainer = document.getElementById('card-container');
     
     const cardData = [
-      { title: 'Card 1', text: 'Descrição do Card 1', imgSrc: 'https://via.placeholder.com/300x200' },
+      { title: 'Card 1', text: 'Descrição do Card 1', imgSrc: 'https://i2.wp.com/blog.connectplug.com.br/wp-content/uploads/2018/01/como-decorar-uma-loja-de-roupas-e1522869386918.jpg' },
       { title: 'Card 2', text: 'Descrição do Card 2', imgSrc: 'https://via.placeholder.com/300x200' },
       { title: 'Card 3', text: 'Descrição do Card 3', imgSrc: 'https://via.placeholder.com/300x200' },
       { title: 'Card 4', text: 'Descrição do Card ', imgSrc: 'https://via.placeholder.com/300x200' },
@@ -24,4 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
       cardContainer.appendChild(card);
     }
   });
+
+  
   

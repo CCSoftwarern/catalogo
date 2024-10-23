@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregar JSON</title>
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <ul id="produtos"></ul>
+
+    <script>
+        // Função para carregar o arquivo JSON
+        fetch('data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar o arquivo JSON');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const listaProdutos = document.getElementById('produtos');
+                data.produtos.forEach(produto => {
+                    const li = document.createElement('li');
+                    li.textContent = `${produto.nome} - R$ ${produto.preco.toFixed(2)}`;
+                    listaProdutos.appendChild(li);
+                });
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+    </script>
+</body>
+</html>
