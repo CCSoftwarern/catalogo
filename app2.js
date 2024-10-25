@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const cardContainer = document.getElementById('card-container');
   
-    fetch('cardData.json')
+    fetch('https://raw.githubusercontent.com/CCSoftwarern/catalogo/refs/heads/principal/data.json')
       .then(response => response.json())
       .then(cardData => {
         cardData.forEach(cardInfo => {

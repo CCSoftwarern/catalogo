@@ -1,34 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carregar JSON</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ler Arquivo com Fetch</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Lista de Produtos</h1>
-    <ul id="produtos"></ul>
+  <div class="container mt-5">
+    <div id="output" class="row">
+      <!-- Conteúdo dinâmico será inserido aqui -->
+    </div>
+  </div>
 
-    <script>
-        // Função para carregar o arquivo JSON
-        fetch('data.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erro ao carregar o arquivo JSON');
-                }
-                return response.json();
-            })
-            .then(data => {
-                const listaProdutos = document.getElementById('produtos');
-                data.produtos.forEach(produto => {
-                    const li = document.createElement('li');
-                    li.textContent = `${produto.nome} - R$ ${produto.preco.toFixed(2)}`;
-                    listaProdutos.appendChild(li);
-                });
-            })
-            .catch(error => {
-                console.error('Erro:', error);
-            });
-    </script>
+  <script>
+    fetch('https://raw.githubusercontent.com/CCSoftwarern/catalogo/refs/heads/principal/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const output = document.getElementById('output');
+        data.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'col-md-4 mb-4';
+          card.innerHTML = `
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">${item.title}</h5>
+                <p class="card-text">${item.description}</p>
+              </div>
+            </div>
+          `;
+          output.appendChild(card);
+        });
+      })
+      .catch(error => console.error('Erro ao carregar dados:', error));
+  </script>
 </body>
 </html>
