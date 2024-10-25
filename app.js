@@ -25,5 +25,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  fetch('https://raw.githubusercontent.com/CCSoftwarern/catalogo/refs/heads/principal/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const output = document.getElementById('output');
+        data.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'col-md-4 mb-4';
+          card.innerHTML = `
+            <div class="card">
+              <img src="${item.src}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">${item.title}</h5>
+                <p class="card-text">${item.description}</p>
+              </div>
+            </div>
+          `;
+          output.appendChild(card);
+        });
+      })
+      .catch(error => console.error('Erro ao carregar dados:', error));
+
+      
+
   
   

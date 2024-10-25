@@ -13,27 +13,12 @@
     </div>
   </div>
 
-  <script>
-    fetch('https://raw.githubusercontent.com/CCSoftwarern/catalogo/refs/heads/principal/data.json')
-      .then(response => response.json())
-      .then(data => {
-        const output = document.getElementById('output');
-        data.forEach(item => {
-          const card = document.createElement('div');
-          card.className = 'col-md-4 mb-4';
-          card.innerHTML = `
-            <div class="card">
-              <img src="${item.src}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">${item.title}</h5>
-                <p class="card-text">${item.description}</p>
-              </div>
-            </div>
-          `;
-          output.appendChild(card);
-        });
-      })
-      .catch(error => console.error('Erro ao carregar dados:', error));
-  </script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="app.js"></script> <
+
 </body>
 </html>
